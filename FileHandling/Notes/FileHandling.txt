@@ -1,0 +1,17 @@
+File Handling Important questions - https://www.w3resource.com/cpp-exercises/file-handling/index.php
+
+Q01. Write a C++ program to create a new text file and write some text into it.
+Q02. Write a C++ program to open an existing text file and display its contents on the console.
+Q03. Write a C++ program to count the number of lines in a text file.
+Q04. Write a C++ program to count the number of words in a text file.
+Q05. Write a C++ program to copy the contents of one text file to another.
+Q06. Write a C++ program to find and replace a specific word in a text file.
+Q07. Write a C++ program to append new data to an existing text file.
+Q08. Write a C++ program to sort the lines of a text file in alphabetical order.
+Q09. Write a C++ program to merge multiple text files into a single file.
+Q10. Write a C++ program to split a large text file into smaller files of equal size.
+Q11. Write a C++ program to search for a specific string in a text file and display its line number(s).
+Q12. Write a C++ program to encrypt the contents of a text file using a simple encryption algorithm.
+Q13. Write a C++ program to decrypt the contents of a text file encrypted using the above algorithm.
+Q14. Write a C++ program to read a CSV file and display its contents in tabular form.
+Q15. Write a C++ program to calculate the average of numbers stored in a file.
