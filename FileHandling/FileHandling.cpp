@@ -124,6 +124,7 @@ void example1(){
 
 void writeDataIntoFile(fstream &out){
     cout<<"INFO : writeDataIntoFile()\n";
+    cout<<"Current Position (Write pointer) : "<<out.tellp()<<endl;
     while(!out.eof()){
         string line;
         cout<<"Enter input data : ";
@@ -138,7 +139,7 @@ void writeDataIntoFile(fstream &out){
 void readDataFromFile(fstream &in){
     cout<<"INFO : readDataFromFile()\n";
     string line;
-    cout<<"Current Position : "<<in.tellg()<<endl;
+    cout<<"Current Position (Read pointer) : "<<in.tellg()<<endl;
     in.seekg(0,ios::beg);   //take read cursor/pointer to starting
     while(getline(in,line)){    //read from file
         cout<<line<<endl;  //write onto console
@@ -148,7 +149,7 @@ void readDataFromFile(fstream &in){
 void readDataFromFile(ifstream &in){
     cout<<"INFO : readDataFromFile(ifstream &in)\n";
     string line;
-    cout<<"Current Position : "<<in.tellg()<<endl;
+    cout<<"Current Position (Read pointer) : "<<in.tellg()<<endl;
     in.seekg(0,ios::beg);   //take read cursor/pointer to starting
     while(getline(in,line)){    //read from file
         cout<<line<<endl;  //write onto console
@@ -183,12 +184,15 @@ void read_write_file2(string file){
     fio.close();
 }
 
+//reads the character/word from the input stream without extracting it.
+//does not increase the position
 void peek_example(string file){
     cout<<"INFO : peek_example()\n";
     ifstream fin(file);
-
+    cout<<"Current Position (Read pointer) : "<<fin.tellg()<<endl;
     int c = fin.peek();
-    if (c!=EOF){
+    if (c==EOF){
+        cout<<"EOF\n";
         return; 
     }
     if(isdigit(c)){
@@ -208,12 +212,13 @@ void peek_example(string file){
 void seekp1 (string file)  
 { 
     //create a text file named file before running. 
+    cout<<"\nseekp1() : Opening file : "<<file<<endl;
     ofstream ofile; 
     ofile.open (file); 
       
     ofile<< "geeksforgeeks\n"; 
-    ofile.seekp (8); 
-    ofile<< " geeks\n"; 
+    ofile.seekp (8); //move write pointer
+    ofile<< " NewString\n"; 
       
     ofile.close(); 
 
@@ -233,12 +238,32 @@ void ignore1 (string file)
     ifile.ignore (256, ' ');  //extract/ignore 1st 256 chars or till the space
     last = ifile.get();      //extracts single character
       
-    cout << "Your initial is " << last << '\n';
+    cout << "New First Char is " << last << '\n';
     string str;
     getline(ifile,str); //extracts single line
     cout<<str; 
     ifile.close(); 
 } 
+
+//check existane, file size, file rename, file remove file
+void FileHandlingHacks(string file){
+    //1. check existane
+    ifstream fi(file);  //open in write mode will create new file, if not existed
+    if(!fi){
+        cout<<"File does not exist.\n";
+    }
+    else{
+        cout<<"file is exist & opened.\n";
+    }
+
+    //2. file size
+    fi.seekg(0, ios::end);  //set read ptr to end
+    long n = fi.tellg();
+    cout<<"File size : "<<n<<" Bytes\n";
+
+    //rename(file.c_str(), "NewName.txt");
+
+}
 
 int main(){
     string file_name = "testfile1.txt";
@@ -256,7 +281,9 @@ int main(){
     //peek_example("testfile3.txt");
     
     //seekp1("seekp1.txt");
-    ignore1("seekp1.txt");
+    //ignore1("seekp1.txt");
+
+    FileHandlingHacks("testfile3.txt");
 
     return 0;
 }
