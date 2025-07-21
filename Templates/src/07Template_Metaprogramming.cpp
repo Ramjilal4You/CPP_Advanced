@@ -19,10 +19,18 @@ struct Factorial<0>
   static const int value = 1;
 };
 
+int CalFact(int n){
+  int res=1;
+  //while(n){ res*=n; n--;}
+
+  res = Factorial<5>::value;
+  return res;
+}
 int main()
 {
   // Factorial computation happens at compile-time
-  cout << "Factorial of 5 is: " << Factorial<5>::value;
+  //cout << "Factorial of 5 is: " << Factorial<5>::value;
+  cout << "Factorial of 5 is: " << CalFact(5);
   return 0;
 }
 
