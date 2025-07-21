@@ -1,0 +1,9 @@
+/*
+Client
+Initialize Winsock.
+Create a socket.
+Connect to the server.
+Send and receive data.
+Disconnect.
+
+*/

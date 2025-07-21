@@ -1,6 +1,19 @@
 {
     "files.associations": {
         "iostream": "cpp",
-        "xstring": "cpp"
+        "xstring": "cpp",
+        "ostream": "cpp",
+        "thread": "cpp",
+        "future": "cpp",
+        "algorithm": "cpp",
+        "iterator": "cpp",
+        "xhash": "cpp",
+        "xmemory": "cpp",
+        "xutility": "cpp",
+        "mutex": "cpp",
+        "semaphore": "cpp",
+        "queue": "cpp",
+        "type_traits": "cpp",
+        "functional": "cpp"
     }
 }
