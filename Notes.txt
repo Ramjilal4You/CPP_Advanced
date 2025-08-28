@@ -1,5 +1,7 @@
 https://www.linkedin.com/pulse/rule-zero-six-rainer-grimm/ - https://www.pearson.com/en-us/subject-catalog/p/c-core-guidelines-explained-best-practices-for-modern-c/P200000007274/9780136875673
 
+g++ -fdump-tree-original .\01Function_Templates.cpp
+
 Youtube - 
 01 Memory Leaks & How to avoid
 	- Memory Leaks - with diagnostic tool

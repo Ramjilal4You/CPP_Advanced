@@ -2,8 +2,19 @@
 #include <iostream>
 using namespace std;
 
-#include <iostream>
-using namespace std;
+/*
+    C++ Template Metaprogramming
+    ============================
+    * Template metaprogramming allows us to perform computations at compile-time using templates.
+    * This can lead to more efficient code by avoiding runtime calculations.
+*/
+
+// Base Case : Specialization for Factorial<0>
+template <> 
+struct Factorial<0>
+{
+  static const int value = 1;
+};
 
 // Template metaprogramming for calculating factorial at compile-time
 template <int N> 
@@ -12,27 +23,22 @@ struct Factorial
   static const int value = N * Factorial<N - 1>::value;
 };
 
-// Specialization for the base case (Factorial<0>)
-template <> 
-struct Factorial<0>
-{
-  static const int value = 1;
-};
-
+// Function to calculate factorial using the Factorial template
 int CalFact(int n){
-  int res=1;
-  //while(n){ res*=n; n--;}
-
-  res = Factorial<5>::value;
-  return res;
+  return Factorial<5>::value;
 }
+
 int main()
 {
   // Factorial computation happens at compile-time
-  //cout << "Factorial of 5 is: " << Factorial<5>::value;
-  cout << "Factorial of 5 is: " << CalFact(5);
+  int res = CalFact(5);
+  cout << "Factorial of 5 is: " << res << endl;
   return 0;
 }
+
+
+
+
 
 /* In powershell window
 g++ [option] <input file> -o <output file>

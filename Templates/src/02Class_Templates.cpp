@@ -2,6 +2,13 @@
 #include <iostream>
 using namespace std;
 
+/*
+    C++ Class Templates
+    ====================
+    * Class templates allow us to create classes that can handle any data type.
+    * Instead of defining a class for each data type, we can define a single class template.
+*/
+
 // Defining class template
 template <typename T1, typename T2> 
 class MyClass {
@@ -30,6 +37,11 @@ int main() {
 
     return 0;
 }
+
+
+
+
+
 
 /* In powershell window
 g++ [option] <input file> -o <output file>

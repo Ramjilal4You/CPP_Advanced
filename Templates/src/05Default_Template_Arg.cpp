@@ -2,6 +2,13 @@
 #include <iostream>
 using namespace std;
 
+/*
+    C++ Default Template Arguments
+    ==============================
+    * Default template arguments allow us to specify default values for template parameters.
+    * This can simplify the usage of templates by allowing users to omit certain parameters.
+*/
+
 // Defining function template with default type
 template <class T1, class T2 = double, class T3 = string>
 class MyClass {
@@ -42,6 +49,11 @@ int main() {
 
     return 0;
 }
+
+
+
+
+
 
 /* In powershell window
 g++ [option] <input file> -o <output file>

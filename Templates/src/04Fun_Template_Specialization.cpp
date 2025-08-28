@@ -1,6 +1,13 @@
-// C++ template specialization
+// C++ Function Template specialization
 #include <iostream>
 using namespace std;
+
+/*
+    C++ Function Template Specialization
+    =====================================
+    * Function template specialization allows us to customize the behavior of a function template for specific data types.
+    * We can create full specializations for a specific type or partial specializations for a subset of types.
+*/
 
 // Generic template
 template <typename T> 
@@ -10,14 +17,16 @@ void MyPrint(T value)
 }
 
 // Full Template specialization for int
+// Full specialization customizes the template for a specific type.
 template <> 
 void MyPrint(int value)
 {
     cout << "Value int: " << value <<endl;
 }
 
-// Partial Template specialization for int subtype
-template <class T> 
+// Partial Template specialization for pointer types
+// Partial specialization allows customization for a subset of types.
+template <typename T> 
 void MyPrint(T* value)
 {
     cout << "Value T*: " << *value <<endl;
@@ -25,12 +34,17 @@ void MyPrint(T* value)
 
 int main()
 {
-    MyPrint(3);
-    MyPrint(3.1415);
+    MyPrint<int>(3);
+    MyPrint<double>(3.1415);
     int var = 10;
-    MyPrint(&var);
+    MyPrint<int>(&var);
     return 0;
 }
+
+
+
+
+
 
 /* In powershell window
 g++ [option] <input file> -o <output file>

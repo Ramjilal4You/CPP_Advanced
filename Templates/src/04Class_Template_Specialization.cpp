@@ -2,6 +2,13 @@
 #include <iostream>
 using namespace std;
 
+/*
+    * C++ Class Template Specialization
+    * ==================================
+    * Class template specialization allows us to customize the behavior of a class template for specific data types.
+    * We can create full specializations for a specific type or partial specializations for a subset of types.
+*/
+
 // Primary template
 template <typename T>
 class Printer {
@@ -11,7 +18,8 @@ public:
     }
 };
 
-// Specialization for int
+// Full Template Specialization for int
+// Full specialization customizes the template for a specific type.
 template <>
 class Printer<int> {
 public:
@@ -20,7 +28,8 @@ public:
     }
 };
 
-// Partial Specialization for int
+// Partial Specialization for pointer types
+// Partial specialization allows customization for a subset of types.
 template <class T>
 class Printer<T*> {
 public:
@@ -42,6 +51,9 @@ int main() {
 
     return 0;
 }
+
+
+
 
 
 
