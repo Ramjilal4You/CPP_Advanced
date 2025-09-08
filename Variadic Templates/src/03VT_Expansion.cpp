@@ -20,3 +20,4 @@ int main(){
 }
 
 //g++ -fdump-tree-original .\01Function_Templates.cpp
+//g++ -S .\01Function_Templates.cpp
