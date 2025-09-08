@@ -4,10 +4,13 @@ I'll add here all the examples related to Advanced C++ topics.
 https://www.linkedin.com/pulse/rule-zero-six-rainer-grimm/ - https://www.pearson.com/en-us/subject-catalog/p/c-core-guidelines-explained-best-practices-for-modern-c/P200000007274/9780136875673
 
 Youtube - 
+
 01 Memory Leaks & How to avoid
 	- Memory Leaks - with diagnostic tool
 	- How can we avoid - using delete
+ 
 02 Rule of 3 - https://www.geeksforgeeks.org/rule-of-three-in-cpp/
+
 03 Rule of 5 - https://www.geeksforgeeks.org/rule-of-five-in-cpp/
 
 04 Smart Pointers - why need, what & types
